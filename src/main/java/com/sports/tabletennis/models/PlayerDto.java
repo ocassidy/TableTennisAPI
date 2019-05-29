@@ -1,30 +1,24 @@
-package com.sports.tabletennis.entities;
+package com.sports.tabletennis.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "players", schema="playerdb")
-public class Player {
+public class PlayerDto {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "player_id")
     private Long id;
 
     @NotNull
-    @Column(name = "player_name")
     private String playerName;
 
     @NotNull
-    @Column(name = "player_rank")
     private String rank;
 }
